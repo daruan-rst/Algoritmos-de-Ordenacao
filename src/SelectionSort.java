@@ -3,31 +3,24 @@ import java.util.Arrays;
 public class SelectionSort {
 
 
-    static public int[] selectionSort(int[] numeros){
-        int minIndex = 0;
-        int min = numeros[minIndex];
-        int j = 0;
-        while (j<numeros.length) {
-            for (int i = j; i < numeros.length; i++) {
-                min = (i == j ? numeros[j]: min );
-                if (numeros[i]<min ){
-                    min = numeros[i];
-                    minIndex = i;
+    static public int[] selectionSort(int[] numeros) {
+        for (int i = 0; i < numeros.length - 1; i++) {
+            int minIndex = i;
+            int min = numeros[minIndex];
+            for (int j = i + 1; j < numeros.length; j++) {
+                if (numeros[j] < min) {
+                    min = numeros[j];
+                    minIndex = j;
                 }
-
             }
-            if (numeros[j] != min) {
-                numeros[minIndex] = numeros[j];
-                numeros[j] = min;
+            if (minIndex != i) {
+                numeros[minIndex] = numeros[i];
+                numeros[i] = min;
             }
             System.out.println(Arrays.toString(numeros));
-
-            j++;
-
         }
-
-
-        return numeros;}
+        return numeros;
+    }
 }
 
 
