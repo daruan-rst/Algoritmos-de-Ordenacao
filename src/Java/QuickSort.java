@@ -1,3 +1,5 @@
+package Java;
+
 public class QuickSort {
     static public int[] quickSort(int[] numeros) {
         quickSort(numeros, 0, numeros.length - 1);
